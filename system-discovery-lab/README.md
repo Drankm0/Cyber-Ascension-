@@ -41,3 +41,14 @@ Nmap service names do not always represent the actual service running on a port.
 - Process Identification
 - Network Troubleshooting
 - System Administration
+
+
+# System Discovery Lab
+
+Testing Nmap, lsof, ps, and service discovery on macOS.
+
+## Findings
+
+- Port 5000 -> ControlCenter
+- Port 7000 -> ControlCenter
+- AirTunes detected
