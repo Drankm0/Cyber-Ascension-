@@ -1,6 +1,12 @@
 import socket
 from datetime import datetime
 
+def get_service(port):
+    try:
+        return socket.getservbyport(port)
+    except:
+        return "unknown"
+
 def scan_ports(target, start_port, end_port):
     print(f"\n=== PORT SCANNER ===")
     print(f"Target: {target}")
@@ -14,7 +20,8 @@ def scan_ports(target, start_port, end_port):
         sock.settimeout(0.5)
         result = sock.connect_ex((target, port))
         if result == 0:
-            print(f"[OPEN] Port {port}")
+            service = get_service(port)
+            print(f"[OPEN] Port {port} — {service}")
             open_ports.append(port)
         sock.close()
     
